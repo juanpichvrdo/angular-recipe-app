@@ -13,6 +13,11 @@ export class RecipeListComponent implements OnInit {
       "Hamburger",
       "Recipe for a hamburguer",
       "http://www.magimix.com/files/rec_22546/in_uk_hamburger.jpg"
+    ),
+    new Recipe(
+      "Hamburger",
+      "Recipe for a hamburguer",
+      "http://www.magimix.com/files/rec_22546/in_uk_hamburger.jpg"
     )
   ];
 
