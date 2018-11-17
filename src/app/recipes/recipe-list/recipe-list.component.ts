@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 
 import { Recipe } from "../recipe.model";
 
@@ -8,6 +8,7 @@ import { Recipe } from "../recipe.model";
   styleUrls: ["./recipe-list.component.css"]
 })
 export class RecipeListComponent implements OnInit {
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
   recipes: Recipe[] = [
     new Recipe(
       "Hamburger",
@@ -15,11 +16,15 @@ export class RecipeListComponent implements OnInit {
       "http://www.magimix.com/files/rec_22546/in_uk_hamburger.jpg"
     ),
     new Recipe(
-      "Hamburger",
+      "Another Hamburger",
       "Recipe for a hamburguer",
       "http://www.magimix.com/files/rec_22546/in_uk_hamburger.jpg"
     )
   ];
+
+  onRecipeSelected(recipe: Recipe) {
+    this.recipeWasSelected.emit(recipe);
+  }
 
   constructor() {}
 
